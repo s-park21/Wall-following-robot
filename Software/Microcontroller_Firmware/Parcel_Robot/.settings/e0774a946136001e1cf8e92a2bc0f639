@@ -1,0 +1,30 @@
+/*
+ * Motors.c
+ *
+ *  Created on: 9 Aug. 2023
+ *      Author: thean
+ */
+
+#include "Motors.h"
+
+/*
+ *	Fuction: drive_left_motor_speed
+ *	uint16_t speed_rps: Speed in rad/s
+ *	uint8_t direction: Direction 1=Forward, 0=Backwards
+ */
+void drive_left_motor_speed(motor_t *left_motor, uint16_t speed_ticks, uint8_t direction) {
+	uint32_t speed_ticks_per_s = (speed_rps / 2 * M_PI) * STEPS_PER_REV; // This is the same as the counter freq
+	const Clock_frequency = 36E6;	// 36MHz
+	// Set timer frequency
+	Left_Motor_Timer->Init.Prescaler = (Clock_frequency / speed_ticks_per_s) - 1;
+	HAL_TIM_Base_Start(left_motor->motor_timer);
+}
+
+void drive_right_motor_speed(motor_t *right_motor, uint16_t speed_ticks, uint8_t direction) {
+	uint32_t speed_ticks_per_s = (speed_rps / 2 * M_PI) * STEPS_PER_REV;	// This is the same as the counter freq
+	const Clock_frequency = 36E6;	// 36MHz
+	// Set timer frequency
+	Right_Motor_Timer->Init.Prescaler = (Clock_frequency / speed_ticks_per_s) - 1;
+	HAL_TIM_Base_Start(right_motor->motor_timer);
+}
+

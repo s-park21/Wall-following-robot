@@ -1,0 +1,4 @@
+../Core/Src/Motors.c:14:6:drive_motor_speed	9
+../Core/Src/Motors.c:49:6:stop_motor	1
+../Core/Src/Motors.c:53:6:calibrate_spin	1
+../Core/Src/Motors.c:63:6:calibrate_drive	1

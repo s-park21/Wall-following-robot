@@ -1,0 +1,7 @@
+../Core/Src/Control.c:19:7:wall_follower_update	3
+../Core/Src/Control.c:41:6:robot_angle_update	1
+../Core/Src/Control.c:58:6:calculate_angle_and_dist_to_wall	1
+../Core/Src/Control.c:71:6:update_robot_position	3
+../Core/Src/Control.c:95:6:steer_to_target	1
+../Core/Src/Control.c:106:7:pos_tanh	1
+../Core/Src/Control.c:110:7:neg_tanh	1
